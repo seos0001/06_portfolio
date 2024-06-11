@@ -1,0 +1,142 @@
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+.about_body,
+.kontakt_body {
+  background-color: #9bccff;
+}
+
+/****** menu ******/
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5%;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+.logo a:hover {
+  color: grey;
+}
+
+.menu-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style-type: none;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 5%;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+.menu a:hover {
+  color: grey;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: relative;
+  z-index: 10; /* Højere z-index for at sikre, at den er over menuen */
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s;
+}
+
+/* Vis desktop-menuen på større skærme */
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+  /* Andre elementer end menu herunder: */
+  .menu a,
+  .logo a {
+    font-size: 50px;
+  }
+
+  .skjul_i_mobil {
+    display: block;
+  }
+}
+
+/* Vis menuen, når burgermenuen er aktiv */
+.menu.active {
+  display: flex;
+}
+
+/* Skift burgermenuen til et kryds, når den er aktiv */
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/******* enkelte projekter *******/
+.h1_projekter {
+  text-align: center;
+}
+
+.main_projekter {
+  margin-top: 10%;
+}
+
+/* footer */
+.footer_uden_scroll {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+/* normal footer */
+footer {
+  text-align: center;
+  font-size: 12px;
+}
